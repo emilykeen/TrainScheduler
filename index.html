@@ -1,59 +1,72 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Train Scheduler</title>
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
-
-<link rel="stylesheet" type="text/css" href= "assets/css/style.css" >
-
-
+    <title>Train Scheduler</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/3.7.1/firebase.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 </head>
+
 <body>
-
-<div class="jumbotron header">
-  <h1>Anytime is Train Time</h1>
-  <h4> Choo Choo. Chee Chee.</h4>
-</div>
-
-
-<table class="table tbl">
-  <td id= "TrainName"><b>TrainName</td>
-  <td id="Destination"><b>Destination</td>
-  <td id="Frequency"><b>Frequency (min)</td>
-  <td id="Next"><b>Next Arrival</td>
-  <td id="minutesAway"><b>Minutes Away</td>
-
-</table>
-
-
-
-<form>
-  <div class="form-group">
-    <label>Train Name</label>
-    <input type="text" class="form-control">
-  </div>
-    <div class="form-group">
-
-    <div class="form-group">
-    <label>Destination</label>
-    <input type="text" class="form-control">
-  </div>
-    <div class="form-group">
-    <label>First Train Time (HH:mm- military time)</label>
-    <input type="text" class="form-control">
-  </div>
-    <div class="form-group">
-    <label>Frequency (min)</label>
-    <input type="text" class="form-control">
-  </div>
-
-  <button type="submit" class="btn btn-default">Submit</button>
-</form>
-<script type="text/javascript" src= "assets/javascript/game.js"></script>
+    <div class="jumbotron header">
+        <h1>Anytime is Train Time</h1>
+        <h4> Choo Choo. Chee Chee.</h4>
+    </div>
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading scheduleHeader"><h3>Current Train Schedule</h3></div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table" id="train-table">
+                        <thead>
+                            <tr>
+                                <th>Train Name</th>
+                                <th>Destination</th>
+                                <th>Frequency (min)</th>
+                                <th>Next Arival</th>
+                                <th>Minutes Away</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading addTrainHeader"><h3>Add Train</h3></div>
+            <div class="panel-body">
+                <form role="form">
+                    <div class="form-group">
+                        <label for="name-input">Train Name:</label>
+                        <input class="form-control" id="name-input" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label for="Destination-input">Destination</label>
+                        <input class="form-control" id="Destination-input" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label for="first-time-input">First train Time (HH:mm- military time)</label>
+                        <input class="form-control" id="first-time-input" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label for="frequency-input">Frequency(min)</label>
+                        <input class="form-control" id="frequency-input" type="text">
+                    </div>
+                    <button class="btn btn-default" id="add-train" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
+
 </html>

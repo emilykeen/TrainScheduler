@@ -1,17 +1,31 @@
-.header{
-	text-align: center;
+.header {
+    text-align: center;
+    background: brown;
+    color: white;
 }
 
-.tbl{
-	position:relative;
-	left:10%;
-	width:80%;
-
-	
+.tbl {
+    position: relative;
+    left: 10%;
+    width: 80%;
 }
 
-form{
-	position:relative;
-	width:80%;
-	left:10%;
+form {
+    position: relative;
+    width: 80%;
+    left: 10%;
+}
+
+body {
+    background: grey;
+}
+
+.scheduleHeader {
+    text-align: center;
+    font-weight: bold;
+}
+
+.addTrainHeader {
+    text-align: center;
+    font-weight: bold;
 }
